@@ -1,0 +1,8 @@
+D:\Faculty\SP\SP-Lab1\MyBook\bin\Debug\MyBook.exe.config
+D:\Faculty\SP\SP-Lab1\MyBook\bin\Debug\MyBook.exe
+D:\Faculty\SP\SP-Lab1\MyBook\bin\Debug\MyBook.pdb
+D:\Faculty\SP\SP-Lab1\MyBook\obj\Debug\MyBook.csproj.AssemblyReference.cache
+D:\Faculty\SP\SP-Lab1\MyBook\obj\Debug\MyBook.csproj.SuggestedBindingRedirects.cache
+D:\Faculty\SP\SP-Lab1\MyBook\obj\Debug\MyBook.csproj.CoreCompileInputs.cache
+D:\Faculty\SP\SP-Lab1\MyBook\obj\Debug\MyBook.exe
+D:\Faculty\SP\SP-Lab1\MyBook\obj\Debug\MyBook.pdb
