@@ -9,37 +9,37 @@ namespace MyBook
     public class Book
     {
         public string Name { get; set; }
-        public List<string> paragraphs = new List<string>();
-        public List<string> images = new List<string>();
-        public List<string> tables = new List<string>();
+        private List<string> paragraphsList = new List<string>();
+        private List<string> imagesList = new List<string>();
+        private List<string> tablesList = new List<string>();
 
         public Book(string name)
         {
             this.Name = name;
         }
-        public void createNewParagraph(string text)
+        public void createNewParagraph(string paragraphText)
         {
-            this.paragraphs.Add(text);
+            this.paragraphsList.Add(paragraphText);
         }
 
-        public void createNewImage(string text)
+        public void createNewImage(string imageText)
         {
-            this.images.Add(text);
+            this.imagesList.Add(imageText);
         }
 
-        public void createNewTable(string text)
+        public void createNewTable(string tableText)
         {
-            this.tables.Add(text);
+            this.tablesList.Add(tableText);
         }
 
         public void print()
         {
             Console.WriteLine($"{this.Name} paragraphs: ");
-            paragraphs.ForEach(paragraph => Console.WriteLine($"{paragraph}; "));
+            paragraphsList.ForEach(paragraph => Console.WriteLine($"{paragraph}; "));
             Console.WriteLine($"{this.Name} images: ");
-            images.ForEach(image => Console.WriteLine($"{image}; "));
+            imagesList.ForEach(image => Console.WriteLine($"{image}; "));
             Console.WriteLine($"{this.Name} paragraphs: ");
-            tables.ForEach(table => Console.WriteLine($"{table}; "));
+            tablesList.ForEach(table => Console.WriteLine($"{table}; "));
         }
     }
 }
