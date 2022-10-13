@@ -8,38 +8,31 @@ namespace MyBook
 {
     public class Book
     {
-        public string Name { get; set; }
-        private List<string> paragraphsList = new List<string>();
-        private List<string> imagesList = new List<string>();
-        private List<string> tablesList = new List<string>();
+        public string Title { get; set; }
 
-        public Book(string name)
+        private Author Author { get; set; }
+        private List<Chapter> Chapters = new List<Chapter>();
+
+        public Book(string title)
         {
-            this.Name = name;
-        }
-        public void createNewParagraph(string paragraphText)
-        {
-            this.paragraphsList.Add(paragraphText);
+            Title = title;
         }
 
-        public void createNewImage(string imageText)
+        public void addAuthor(Author author)
         {
-            this.imagesList.Add(imageText);
+            Author = author; 
         }
 
-        public void createNewTable(string tableText)
+        public int CreateChapter(string chapterName)
         {
-            this.tablesList.Add(tableText);
+            var chapter = new Chapter(chapterName);
+            Chapters.Add(chapter);
+            return Chapters.IndexOf(chapter);
         }
 
-        public void print()
+        public Chapter GetChapter(int chapterIndex)
         {
-            Console.WriteLine($"{this.Name} paragraphs: ");
-            paragraphsList.ForEach(paragraph => Console.WriteLine($"{paragraph}; "));
-            Console.WriteLine($"{this.Name} images: ");
-            imagesList.ForEach(image => Console.WriteLine($"{image}; "));
-            Console.WriteLine($"{this.Name} paragraphs: ");
-            tablesList.ForEach(table => Console.WriteLine($"{table}; "));
+            return Chapters[chapterIndex];
         }
     }
 }

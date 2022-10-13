@@ -11,15 +11,23 @@ namespace MyBook
         static void Main(string[] args)
         {
             Book discoTitanic = new Book("Disco Titanic");
-            discoTitanic.createNewParagraph("Paragraph 1");
-            discoTitanic.createNewParagraph("Paragraph 2");
-            discoTitanic.createNewParagraph("Paragraph 3");
-            discoTitanic.createNewImage("Image 1");
-            discoTitanic.createNewParagraph("Paragraph 4");
-            discoTitanic.createNewTable("Table 1");
-            discoTitanic.createNewParagraph("Paragraph 5");
+            Author rpGheo = new Author("Radu Pavel Gheo");
+            discoTitanic.addAuthor(rpGheo);
+            int indexChapterOne = discoTitanic.CreateChapter("Capitolul 1");
+            Chapter chp1 = discoTitanic.GetChapter(indexChapterOne);
+            int indexSubChapterOneOne = chp1.CreateSubChapter("Subcapitol 1.1");
+            SubChapter scOneOne = chp1.GetSubChapter(indexSubChapterOneOne);
 
-            discoTitanic.print();
+
+            scOneOne.CreateNewParagraph("Paragraph 1");
+            scOneOne.CreateNewParagraph("Paragraph 2");
+            scOneOne.CreateNewParagraph("Paragraph 3");
+            scOneOne.CreateNewImage("Image 1");
+            scOneOne.CreateNewParagraph("Paragraph 4");
+            scOneOne.CreateNewTable("Table 1");
+            scOneOne.CreateNewParagraph("Paragraph 5");
+
+            scOneOne.Print();
             Console.ReadLine();
 
         }
