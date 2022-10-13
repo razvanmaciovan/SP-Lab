@@ -1,2 +1,2 @@
-# SP-Lab1
+# Laborator
 Sabloane de proiectare 2022
