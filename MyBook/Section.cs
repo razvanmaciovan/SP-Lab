@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class Table : Element
+    public class Section : Element
     {
         public string Title { get; set; }
-        public Table(string title)
+
+        public Section(string chapterName)
         {
-            Title = title;
+            Title = chapterName;
         }
 
         public void Add(Element element)
         {
 
         }
-
         public void Remove(Element element)
         {
 
@@ -27,6 +27,11 @@ namespace MyBook
         {
             return 0;
         }
-        public void Print() => Console.WriteLine($"Table with Title: {Title}");
+
+        public void Print()
+        {
+            Console.WriteLine(Title);
+        }
+
     }
 }

@@ -6,33 +6,32 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class Book
+    public class Book : Section
     {
-        public string Title { get; set; }
+        public string Name { get; set; }
 
         private Author Author { get; set; }
-        private List<Chapter> Chapters = new List<Chapter>();
+        private List<Element> Sections = new List<Element>();
 
-        public Book(string title)
+        public Book(string chapterName) : base(chapterName)
         {
-            Title = title;
+            Name = chapterName;
         }
 
-        public void addAuthor(Author author)
+        public void AddAuthor(Author author)
         {
             Author = author; 
         }
-
-        public int CreateChapter(string chapterName)
+        public void AddContent(Element element)
         {
-            var chapter = new Chapter(chapterName);
-            Chapters.Add(chapter);
-            return Chapters.IndexOf(chapter);
+            Sections.Add(element);
         }
 
-        public Chapter GetChapter(int chapterIndex)
+        public new void Print()
         {
-            return Chapters[chapterIndex];
+            Console.WriteLine($"Book: {Name}");
+            Author.Print();
+            base.Print();
         }
     }
 }

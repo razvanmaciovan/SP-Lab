@@ -8,9 +8,9 @@ namespace MyBook
 {
     public class SubChapter
     {
-        private List<Paragraph> ParagraphsList = new List<Paragraph>();
-        private List<Image> ImagesList = new List<Image>();
-        private List<Table> TablesList = new List<Table>();
+        protected List<Paragraph> ParagraphsList = new List<Paragraph>();
+        protected List<Image> ImagesList = new List<Image>();
+        protected List<Table> TablesList = new List<Table>();
         public string Name { get; set; }
 
         public SubChapter(string subChapterName) => Name = subChapterName;

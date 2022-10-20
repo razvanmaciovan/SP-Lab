@@ -45,7 +45,8 @@
   <ItemGroup>
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
-    <Compile Include="Chapter.cs" />
+    <Compile Include="Section.cs" />
+    <Compile Include="Element.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Paragraph.cs" />
     <Compile Include="Program.cs" />

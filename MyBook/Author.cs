@@ -13,6 +13,6 @@ namespace MyBook
         {
             Name = authorName;
         }
-        public void print() => Console.WriteLine(Name);
+        public void Print() => Console.WriteLine(Name);
     }
 }
