@@ -10,8 +10,7 @@ namespace MyBook
     {
         public string Name { get; set; }
 
-        private Author Author { get; set; }
-        private List<Element> Sections = new List<Element>();
+        private List<Author> Authors = new List<Author>();
 
         public Book(string chapterName) : base(chapterName)
         {
@@ -20,18 +19,23 @@ namespace MyBook
 
         public void AddAuthor(Author author)
         {
-            Author = author; 
+            Authors.Add(author);
         }
         public void AddContent(Element element)
         {
-            Sections.Add(element);
+            base.Add(element);
         }
+
 
         public new void Print()
         {
             Console.WriteLine($"Book: {Name}");
-            Author.Print();
-            base.Print();
+            Console.WriteLine("Authors:");
+            Authors.ForEach(author => author.Print());
+            foreach (var element in elements)
+            {
+                element.Print();
+            }
         }
     }
 }

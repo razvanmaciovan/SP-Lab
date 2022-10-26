@@ -9,6 +9,7 @@ namespace MyBook
     public class Section : Element
     {
         public string Title { get; set; }
+        public static List<Element> elements = new List<Element>();
 
         public Section(string chapterName)
         {
@@ -17,7 +18,7 @@ namespace MyBook
 
         public void Add(Element element)
         {
-
+            elements.Add(element);
         }
         public void Remove(Element element)
         {
@@ -31,6 +32,7 @@ namespace MyBook
         public void Print()
         {
             Console.WriteLine(Title);
+            //elements.ForEach(e => e.Print());
         }
 
     }
