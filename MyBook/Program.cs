@@ -10,25 +10,42 @@ namespace MyBook
     {
         static void Main(string[] args)
         {
-            Book noapteBuna = new Book("Noapte buna, copii!");
-            Author rpGheo = new Author("Radu Pavel Gheo");
-            noapteBuna.AddAuthor(rpGheo);
-            Section cap1 = new Section("Capitolul 1");
-            Section cap11 = new Section("Capitolul 1.1");
-            Section cap111 = new Section("Capitolul 1.1.1");
-            Section cap1111 = new Section("Subchapter 1.1.1.1");
-            noapteBuna.AddContent(new Paragraph("Multumesc celor care ..."));
-            noapteBuna.AddContent(cap1);
-            cap1.Add(new Paragraph("Moto capitol"));
-            cap1.Add(cap11);
-            cap11.Add(new Paragraph("Text from subchapter 1.1"));
-            cap11.Add(cap111);
-            cap111.Add(new Paragraph("Text from subchapter 1.1.1"));
-            cap111.Add(cap1111);
-            cap1111.Add(new Image("Image subchapter 1.1.1.1"));
-            noapteBuna.Print();
+            long startTime = CurrentTimeMillis();
+            ImageProxy img1 = new ImageProxy("Pamela Anderson");
+            ImageProxy img2 = new ImageProxy("Kim Kardashian");
+            ImageProxy img3 = new ImageProxy("Kirby Griffin");
+            Section playboyS1 = new Section("Front Cover");
+            playboyS1.Add(img1);
+            Section playboyS2 = new Section("Summer Girls");
+            playboyS2.Add(img2);
+            playboyS2.Add(img3);
+            Book playboy = new Book("Playboy");
+
+            playboy.AddContent(playboyS1);
+            playboy.AddContent(playboyS2);
+            long endTime = CurrentTimeMillis();
+            Console.WriteLine("Creation of the content took " + (endTime -
+            startTime) + " milliseconds");
+            startTime = CurrentTimeMillis();
+            playboyS1.Print();
+            endTime = CurrentTimeMillis();
+            Console.WriteLine("Printing of the section 1 took " + (endTime -
+            startTime) + " milliseconds");
+            startTime = CurrentTimeMillis();
+            playboyS1.Print();
+            endTime = CurrentTimeMillis();
+            Console.WriteLine("Printing again the section 1 took " + (endTime -
+            startTime) + " milliseconds");
             Console.ReadLine();
 
+        }
+
+        private static readonly DateTime begin = new DateTime
+    (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        public static long CurrentTimeMillis()
+        {
+            return (long)(DateTime.UtcNow - begin).TotalMilliseconds;
         }
     }
 }

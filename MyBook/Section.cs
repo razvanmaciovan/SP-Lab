@@ -32,7 +32,9 @@ namespace MyBook
         public void Print()
         {
             Console.WriteLine(Title);
-            //elements.ForEach(e => e.Print());
+            elements.ForEach(e =>{
+                if (!(e is Section)) e.Print();
+            });
         }
 
     }
