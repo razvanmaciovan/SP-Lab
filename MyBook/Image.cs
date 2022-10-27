@@ -7,9 +7,16 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class Image : Element
+    public class Image : Element, Picture
     {
         public string ImageName { get; set; }
+
+        public string Url => throw new NotImplementedException();
+
+        public int Dim => throw new NotImplementedException();
+
+        public string Content => throw new NotImplementedException();
+
         public Image(string imageName)
         {
             ImageName = imageName;

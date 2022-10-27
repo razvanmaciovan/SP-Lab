@@ -40,6 +40,9 @@ namespace MyBook
 
         }
 
+        //N-am gasit echivalentul din java, e un necessary evil codul de mai jos
+        //TODO Util class
+
         private static readonly DateTime begin = new DateTime
     (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 

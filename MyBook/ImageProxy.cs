@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class ImageProxy : Element
+    public class ImageProxy : Element, Picture
     {
         public string Url { get; set; }
+
         public Image RealImage { get; set; }
+
+        public int Dim => throw new NotImplementedException();
+
+        public string Content => throw new NotImplementedException();
+
         public ImageProxy(string url)
         {
             Url = url;
