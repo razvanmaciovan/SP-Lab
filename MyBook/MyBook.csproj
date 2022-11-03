@@ -58,8 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlignCenter.cs" />
+    <Compile Include="AlignLeft.cs" />
+    <Compile Include="AlignRight.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="IAlignStrategy.cs" />
     <Compile Include="ImageProxy.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Section.cs" />

@@ -9,6 +9,7 @@ namespace MyBook
     public class Paragraph : Element
     {
         public string Text { get; set; }
+        public IAlignStrategy AlignStrategy { get; set; }
         public Paragraph(string text)
         {
             Text = text;
@@ -25,6 +26,14 @@ namespace MyBook
         {
             return 0;
         }
-        public void Print() => Console.WriteLine($"Paragraph: {Text}");
+        public void Print() {
+            if (AlignStrategy != null) AlignStrategy.Print();
+            else Console.WriteLine($"Paragraph: {Text}"); 
+        }
+
+        public void setAlignStrategy(IAlignStrategy alignStrategy) {
+            AlignStrategy = alignStrategy;
+            alignStrategy.Render(Text);
+        }
     }
 }
