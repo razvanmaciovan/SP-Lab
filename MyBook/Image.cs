@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class Image : Element, Picture
+    public class Image : IElement, Picture
     {
         public string ImageName { get; set; }
 
@@ -30,20 +30,25 @@ namespace MyBook
             }
         }
 
-        public void Add(Element element)
+        public void Add(IElement element)
         {
 
         }
 
-        public void Remove(Element element)
+        public void Remove(IElement element)
         {
 
         }
-        public int Get(Element element)
+        public int Get(IElement element)
         {
             return 0;
         }
 
         public void Print() => Console.WriteLine($"Image with name: {ImageName}");
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitImage(this);
+        }
     }
 }

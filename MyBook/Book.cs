@@ -21,7 +21,7 @@ namespace MyBook
         {
             Authors.Add(author);
         }
-        public void AddContent(Element element)
+        public void AddContent(IElement element)
         {
             base.Add(element);
         }

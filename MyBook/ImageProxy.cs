@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class ImageProxy : Element, Picture
+    public class ImageProxy : IElement, Picture
     {
         public string Url { get; set; }
 
@@ -30,12 +30,12 @@ namespace MyBook
 
             return RealImage;
         }
-        public void Add(Element element)
+        public void Add(IElement element)
         {
             throw new NotImplementedException();
         }
 
-        public int Get(Element element)
+        public int Get(IElement element)
         {
             throw new NotImplementedException();
         }
@@ -45,9 +45,14 @@ namespace MyBook
             LoadImage().Print();
         }
 
-        public void Remove(Element element)
+        public void Remove(IElement element)
         {
             throw new NotImplementedException();
+        }
+
+        public void Accept(IVisitor visitor)
+        {
+           visitor.VisitImageProxy(this);
         }
     }
 }

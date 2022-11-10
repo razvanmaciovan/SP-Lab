@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class Paragraph : Element
+    public class Paragraph : IElement
     {
         public string Text { get; set; }
         public IAlignStrategy AlignStrategy { get; set; }
@@ -14,15 +14,15 @@ namespace MyBook
         {
             Text = text;
         }
-        public void Add(Element element)
+        public void Add(IElement element)
         {
             
         }
-        public void Remove(Element element)
+        public void Remove(IElement element)
         {
 
         }
-        public int Get(Element element)
+        public int Get(IElement element)
         {
             return 0;
         }
@@ -34,6 +34,11 @@ namespace MyBook
         public void setAlignStrategy(IAlignStrategy alignStrategy) {
             AlignStrategy = alignStrategy;
             alignStrategy.Render(Text);
+        }
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitParagraph(this);
         }
     }
 }

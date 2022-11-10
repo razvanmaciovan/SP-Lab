@@ -19,15 +19,13 @@ namespace MyBook
             cap1.Add(p3);
             Paragraph p4 = new Paragraph("Paragraph 4");
             cap1.Add(p4);
-            Console.WriteLine("Printing without Alignment");
-            Console.WriteLine();
-            cap1.Print();
-            p1.setAlignStrategy(new AlignCenter());
-            p2.setAlignStrategy(new AlignRight());
-            p3.setAlignStrategy(new AlignLeft());
-            Console.WriteLine("Printing with Alignment");
-            Console.WriteLine();
-            cap1.Print();
+            cap1.Add(new ImageProxy("ImageOne"));
+            cap1.Add(new Image("ImageTwo"));
+            cap1.Add(new Paragraph("Some text"));
+            cap1.Add(new Table("Table 1"));
+            BookStatistics stats = new BookStatistics();
+            cap1.Accept(stats);
+            stats.PrintStatistics();
             Console.ReadLine();
 
         }

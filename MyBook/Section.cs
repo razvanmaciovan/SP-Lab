@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace MyBook
 {
-    public class Section : Element
+    public class Section : IElement
     {
         public string Title { get; set; }
-        public static List<Element> elements = new List<Element>();
+        public static List<IElement> elements = new List<IElement>();
 
         public Section(string chapterName)
         {
             Title = chapterName;
         }
 
-        public void Add(Element element)
+        public void Add(IElement element)
         {
             elements.Add(element);
         }
-        public void Remove(Element element)
+        public void Remove(IElement element)
         {
 
         }
-        public int Get(Element element)
+        public int Get(IElement element)
         {
             return 0;
         }
@@ -37,5 +37,12 @@ namespace MyBook
             });
         }
 
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitSection(this);
+            elements.ForEach(e => {
+                if (!(e is Section)) e.Accept(visitor);
+            });
+        }
     }
 }
