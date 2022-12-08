@@ -10,6 +10,8 @@ namespace MyBook
     {
         static void Main(string[] args)
         {
+            Book mybook = new Book("My Book");
+            DocumentManager.Instance.Book = mybook;
             Section cap1 = new Section("Capitolul 1");
             Paragraph p1 = new Paragraph("Paragraph 1");
             cap1.Add(p1);
@@ -26,6 +28,8 @@ namespace MyBook
             BookStatistics stats = new BookStatistics();
             cap1.Accept(stats);
             stats.PrintStatistics();
+            DocumentManager.Instance.Book.Print();
+            Console.WriteLine("Done");
             Console.ReadLine();
 
         }

@@ -65,6 +65,7 @@
     <Compile Include="BMPImageLoader.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="BookStatistics.cs" />
+    <Compile Include="DocumentManager.cs" />
     <Compile Include="IAlignStrategy.cs" />
     <Compile Include="IImageLoader.cs" />
     <Compile Include="ImageLoaderFactory.cs" />
